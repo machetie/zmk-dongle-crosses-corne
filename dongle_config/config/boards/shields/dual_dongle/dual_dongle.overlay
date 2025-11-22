@@ -4,9 +4,8 @@
     };
 
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
+        compatible = "zmk,kscan-mock";
         label = "KSCAN";
-        // Dongle has no physical keys
-        diode-direction = "col2row";
+        events = <0>;
     };
 };
