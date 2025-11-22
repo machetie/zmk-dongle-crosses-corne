@@ -46,6 +46,13 @@ jobs:
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
           git config --global --add safe.directory ${GITHUB_WORKSPACE}/${{ matrix.config_dir }}
 
+      - name: Debug Info
+        run: |
+          id
+          git --version
+          west --version
+          ls -la
+
       - name: Cache west modules
         uses: actions/cache@v4
         env:
@@ -67,7 +74,7 @@ jobs:
         run: west init -l ${{ matrix.config_dir }}
 
       - name: West Update
-        run: west update
+        run: west update -v
 
       - name: West Zephyr Export
         run: west zephyr-export
