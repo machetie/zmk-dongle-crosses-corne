@@ -1,0 +1,11 @@
+build/
+.west/
+modules/
+tools/
+zephyr/
+bootloader/
+zmk/
+*.uf2
+*.bin
+*.hex
+.vscode/

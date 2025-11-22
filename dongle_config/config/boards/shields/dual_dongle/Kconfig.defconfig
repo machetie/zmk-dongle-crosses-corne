@@ -1,0 +1,24 @@
+if SHIELD_DUAL_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "DualKB Dongle"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 4
+
+config BT_MAX_CONN
+    default 9
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+    default y
+
+endif

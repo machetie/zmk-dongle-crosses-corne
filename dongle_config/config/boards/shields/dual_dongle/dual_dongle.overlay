@@ -1,0 +1,12 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        // Dongle has no physical keys
+        diode-direction = "col2row";
+    };
+};
