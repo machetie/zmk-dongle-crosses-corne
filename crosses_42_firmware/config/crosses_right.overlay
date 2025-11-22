@@ -1,0 +1,8 @@
+&trackball_central_listener {
+    status = "disabled";
+};
+
+&trackball_peripheral_split {
+    device = <&trackball_central>;
+    input-processors = <&zip_ble_report_rate_limit>;
+};
