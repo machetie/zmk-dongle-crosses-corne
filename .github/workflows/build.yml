@@ -15,7 +15,7 @@ jobs:
             app_dir: dongle_config
             config_path: config
             board: nice_nano_v2
-            shield: dual_dongle
+            shield: dual_dongle dongle_screen
             artifact_name: dual_dongle
           - name: crosses_left
             app_dir: crosses_42_firmware
@@ -90,7 +90,7 @@ jobs:
 
       - name: Build Firmware
         working-directory: ${{ matrix.app_dir }}
-        run: west build -s zmk/app -b ${{ matrix.board }} -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/${{ matrix.app_dir }}/${{ matrix.config_path }}"
+        run: west build -s zmk/app -b ${{ matrix.board }} -- -DSHIELD="${{ matrix.shield }}" -DZMK_CONFIG="${GITHUB_WORKSPACE}/${{ matrix.app_dir }}/${{ matrix.config_path }}"
 
       - name: Rename Artifact
         working-directory: ${{ matrix.app_dir }}
