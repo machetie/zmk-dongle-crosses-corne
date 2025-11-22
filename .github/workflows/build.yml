@@ -41,6 +41,12 @@ jobs:
             board: nice_nano_v2
             shield: corne_right
             artifact_name: corne_right
+          - name: settings_reset
+            app_dir: dongle_config
+            config_path: config
+            board: nice_nano_v2
+            shield: settings_reset
+            artifact_name: settings_reset
 
     steps:
       - name: Checkout
