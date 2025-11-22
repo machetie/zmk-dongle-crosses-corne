@@ -1,4 +1,10 @@
-&trackball_peripheral_split {
-    device = <&trackball_central>;
-    input-processors = <&zip_ble_report_rate_limit>;
+#include <input/processors/report_rate_limit.dtsi>
+
+/ {
+    split_inputs {
+        trackball_peripheral_split@0 {
+            device = <&trackball_central>;
+            input-processors = <&zip_ble_report_rate_limit>;
+        };
+    };
 };
