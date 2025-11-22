@@ -73,8 +73,11 @@ jobs:
       - name: West Init
         run: west init -l ${{ matrix.config_dir }}
 
+      - name: Validate Manifest
+        run: west manifest --validate
+
       - name: West Update
-        run: west update -v
+        run: west update
 
       - name: West Zephyr Export
         run: west zephyr-export
