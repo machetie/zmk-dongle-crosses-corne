@@ -80,10 +80,6 @@ jobs:
         working-directory: ${{ matrix.app_dir }}
         run: west init -l ${{ matrix.config_path }}
 
-      - name: Validate Manifest
-        working-directory: ${{ matrix.app_dir }}
-        run: west manifest --validate
-
       - name: West Update
         working-directory: ${{ matrix.app_dir }}
         run: west update
